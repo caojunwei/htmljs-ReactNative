@@ -6,6 +6,7 @@
 var React = require('react-native');
 var ArticleCell = require("./ArticleCell.js")
 var ArticleView = require("./ArticleView.js")
+var ArticleTalk = require("./ArticleTalk.js")
 var RefreshableListView = require('react-native-refreshable-listview')
 var {
     AppRegistry,
@@ -55,6 +56,7 @@ var ArticleList = React.createClass({
         return (
             <ArticleCell
                 article={article} onSelect={() => this.selectArticle(article)}
+                showCommit={() => this.showCommit(article)}
                 />
         );
     },
@@ -129,6 +131,12 @@ var ArticleList = React.createClass({
           component: ArticleView,
           passProps: {article},
         });
+    },
+    showCommit:function(article){
+        this.props.navigator.push({
+            component: ArticleTalk,
+            passProps: {article},
+        })
     }
 });
 
@@ -157,7 +165,7 @@ var styles = StyleSheet.create({
         marginBottom: 5,
     },
     rowSeparator: {
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        backgroundColor: '#efefef',
         height: 1,
         marginLeft: 4,
     },

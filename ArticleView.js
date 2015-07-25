@@ -4,6 +4,7 @@
  */
 
 var React = require('react-native');
+var Icon = require('react-native-vector-icons/Ionicons');
 var {
     AppRegistry,
     StyleSheet,
@@ -27,14 +28,16 @@ var ArticleView = React.createClass({
                      url={this.state.url}
                      javaScriptEnabledAndroid={true}
                      startInLoadingState={true}
-                >dddd</WebView>
+                ></WebView>
                 <View style={styles.footer}>
                     <TouchableHighlight onPress={this._back} underlayColor="#aaa">
-                        <Image
-                         style={styles.button}
-                         source={require('image!back')}
-                         resizeMode="cover"
-                         />
+                        <Icon name="ios-arrow-left" size={30} color="#aaa" style={styles.button}/>
+                    </TouchableHighlight>
+                    <TouchableHighlight onPress={this._add} underlayColor="#aaa">
+                        <Icon name="ios-heart-outline" size={30} color="#aaa" style={styles.button}/>
+                    </TouchableHighlight>
+                    <TouchableHighlight onPress={this._add} underlayColor="#aaa">
+                        <Icon name="ios-chatboxes-outline" size={30} color="#aaa" style={styles.button}/>
                     </TouchableHighlight>
                 </View>
                 </View>
@@ -43,13 +46,13 @@ var ArticleView = React.createClass({
 
     getInitialState: function() {
         return {
-            url:"http://www.html-js.com/article/"+this.props.article.id
+            url:"http://www.html-js.com/article/"+this.props.article.id+"?is_clear=1"
         };
     },
 
     componentDidMount: function() {
         this.setStates({
-            url:"http://www.html-js.com/article/"+this.props.article.id
+            url:"http://www.html-js.com/article/"+this.props.article.id+"?is_clear=1"
         })
     },
     _back:function(){
@@ -82,7 +85,7 @@ var styles = StyleSheet.create({
         borderWidth:1,
         borderColor:"#fff",
         borderTopColor:"#ddd",
-        //alignItems:"center",
+        justifyContent:"space-around",
     },
     back:{
         width:30,

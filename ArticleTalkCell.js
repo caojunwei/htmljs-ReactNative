@@ -17,6 +17,7 @@
 
 var React = require('react-native');
 var Icon = require('react-native-vector-icons/Ionicons');
+var moment = require("moment");
 var {
   Image,
   PixelRatio,
@@ -30,54 +31,32 @@ var colors = ["#ef6f67","#46afe4","#81cc7a","#00cbbd"]
 var random_color = function(){
   return colors[Math.floor(Math.random()*colors.length)]
 }
-var ArticleCell = React.createClass({
+var ArticleTalkCell = React.createClass({
 
-
+//onPress={this.props.onSelect}
   render: function() {
     return (
       <View>
-        <TouchableHighlight onPress={this.props.onSelect}>
+        <TouchableHighlight>
           <View style={styles.row}>
             {/* $FlowIssue #7363964 - There's a bug in Flow where you cannot
               * omit a property or set it to undefined if it's inside a shape,
               * even if it isn't required */}
             <View style={styles.textContainer}>
-              <Text style={styles.title} numberOfLines={2}>
-                {this.props.article.title}
-              </Text>
-              <View style={styles.descContainer} >
+
+              <View style={styles.nameContainer} >
                 <Image
                     style={styles.icon}
-                    source={{uri: this.props.article.user_headpic}}
+                    source={{uri: this.props.talk.user_headpic}}
                     />
-                <Text style={styles.desc} numberOfLines={1}>
-                  {this.props.article.user_nick}  {this.props.article.publish_time}
-                  </Text>
+                <Text style={styles.title} numberOfLines={1}>
+                  {this.props.talk.user_nick} <Text style={{fontSize:12,color:"#ccc",marginLeft:20}}>{moment(this.props.talk.createdAt).fromNow()}</Text>
+                </Text>
 
               </View>
-
-              {this.props.article.tags?
-                  <View style={styles.tags} >
-                    {this.props.article.tags.split(',').map(function(result) {
-                      return <Text style={[styles.tag,{backgroundColor:random_color()}]}> {result}</Text>;
-                    })}
-                  </View>
-              :null}
-              <View style={styles.count_container}>
-                <View style={styles.count_item}>
-                  <Icon name="ios-heart-outline" size={20} color="#999" />
-                  <Text style={{fontSize:12,color:"#999",marginLeft:4,lineHeight:15}}>{this.props.article.zan_count}</Text>
-                </View>
-                <TouchableHighlight onPress={this.props.showCommit} underlayColor="#fff">
-                  <View style={styles.count_item}>
-
-                    <Icon name="ios-chatboxes-outline" size={20} color="#999" />
-                    <Text style={{fontSize:12,color:"#999",marginLeft:4,lineHeight:15}}>{this.props.article.comment_count}</Text>
-
-                  </View>
-                </TouchableHighlight>
-
-              </View>
+              <Text style={styles.html} numberOfLines={5}>
+                {this.props.talk.html.replace(/<[^>]+>/g,"\n").replace(/\n+/g,"\n").replace(/^\n|\n$/g,"")}
+              </Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -89,34 +68,35 @@ var ArticleCell = React.createClass({
 var styles = StyleSheet.create({
   textContainer: {
     flex: 1,
-    paddingBottom:5
   },
   title: {
     flex: 1,
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: '500',
-    paddingTop:10,
-    paddingLeft:5,
-    paddingBottom:7,
-    paddingRight:5
+    paddingLeft:8,
+    paddingRight:5,
+    color:"#ef6f67",
+    paddingTop:3
   },
-  descContainer:{
+  nameContainer:{
     flex:1,
     flexDirection:"row",
     paddingTop:5,
     paddingLeft:5,
-    paddingBottom:5,
+    paddingBottom:10
   },
-  desc:{
-    fontSize: 12,
+  html:{
+    fontSize: 14,
     fontWeight: '200',
-    color:"#999999",
+    color:"#666",
     marginLeft:5,
-
+    marginRight:10,
+    marginBottom:5,
+    marginTop:5
   },
   icon:{
-    width:16,
-    height:16,
+    width:20,
+    height:20,
     borderRadius:8,
     overflow:"hidden",
   },
@@ -128,7 +108,7 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
     flexDirection: 'row',
-    padding: 10,
+    padding: 10
   },
   cellImage: {
     backgroundColor: '#dddddd',
@@ -167,14 +147,14 @@ var styles = StyleSheet.create({
   count_container:{
     position:"absolute",
     right:5,
-    bottom:5,
+    bottom:0,
     flexDirection:"row",
   },
   count_item:{
-    height:20,
-    marginLeft:15,
+    height:15,
+    marginLeft:10,
     flexDirection:"row",
   }
 });
 
-module.exports = ArticleCell;
+module.exports = ArticleTalkCell;

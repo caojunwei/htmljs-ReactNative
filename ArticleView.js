@@ -5,6 +5,8 @@
 
 var React = require('react-native');
 var Icon = require('react-native-vector-icons/Ionicons');
+var ArticleTalk = require("./ArticleTalk.js")
+var MessageTip = require("./MessageTip.js")
 var {
     AppRegistry,
     StyleSheet,
@@ -13,7 +15,8 @@ var {
     ActivityIndicatorIOS,
     WebView,
     TouchableHighlight,
-    Image
+    Image,
+    Animated
     } = React;
 
 var ArticleView = React.createClass({
@@ -33,35 +36,54 @@ var ArticleView = React.createClass({
                     <TouchableHighlight onPress={this._back} underlayColor="#aaa">
                         <Icon name="ios-arrow-left" size={30} color="#aaa" style={styles.button}/>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={this._add} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this._zan} underlayColor="#aaa">
+                        <View style={styles.buttonContainer}>
                         <Icon name="ios-heart-outline" size={30} color="#aaa" style={styles.button}/>
+                            <Text style={{fontSize:13,color:"#666",marginLeft:4,lineHeight:28}}>{this.props.article.zan_count}</Text>
+                        </View>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={this._add} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this._toTalk} underlayColor="#aaa">
+                        <View style={styles.buttonContainer}>
                         <Icon name="ios-chatboxes-outline" size={30} color="#aaa" style={styles.button}/>
+                        <Text style={{fontSize:13,color:"#666",marginLeft:4,lineHeight:28}}>{this.props.article.comment_count}</Text>
+                        </View>
                     </TouchableHighlight>
                 </View>
+                    <MessageTip ref="messageTip"/>
                 </View>
         );
     },
 
     getInitialState: function() {
         return {
-            url:"http://www.html-js.com/article/"+this.props.article.id+"?is_clear=1"
+            url:"http://www.html-js.com/article/"+this.props.article.id+"?is_clear=1",
+            tipText:"棒棒的",
+            tipOpacity:new Animated.Value(0)
         };
     },
 
     componentDidMount: function() {
-        this.setStates({
+        this.setState({
             url:"http://www.html-js.com/article/"+this.props.article.id+"?is_clear=1"
         })
     },
     _back:function(){
         this.props.navigator.pop();
+    },
+    _zan:function(){
+        this.refs.messageTip.show("点赞成功")
+    },
+    _toTalk:function(){
+        this.props.navigator.push({
+            component: ArticleTalk,
+            passProps: {article:this.props.article},
+        })
     }
 
 });
 
 var styles = StyleSheet.create({
+
     container: {
         flex: 1,
         backgroundColor: '#fff',
@@ -106,7 +128,9 @@ var styles = StyleSheet.create({
         backgroundColor: '#fff',
 
     },
-
+    buttonContainer:{
+        flexDirection:"row"
+    }
 });
 
 AppRegistry.registerComponent('ArticleView', () => ArticleView);

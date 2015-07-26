@@ -37,7 +37,7 @@ var ArticleTalkCell = React.createClass({
   render: function() {
     return (
       <View>
-        <TouchableHighlight>
+        <TouchableHighlight onPress={this.props.onSelect}>
           <View style={styles.row}>
             {/* $FlowIssue #7363964 - There's a bug in Flow where you cannot
               * omit a property or set it to undefined if it's inside a shape,
@@ -97,8 +97,7 @@ var styles = StyleSheet.create({
   icon:{
     width:20,
     height:20,
-    borderRadius:8,
-    overflow:"hidden",
+    borderRadius:10,
   },
   movieYear: {
     color: '#999999',

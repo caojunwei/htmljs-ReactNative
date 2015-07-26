@@ -4,6 +4,7 @@
  */
 
 var React = require('react-native');
+
 var Icon = require('react-native-vector-icons/Ionicons');
 var {
     AppRegistry,
@@ -13,8 +14,10 @@ var {
     ActivityIndicatorIOS,
     TouchableHighlight,
     Image,
+    Animated,
     ListView,
-    TextInput
+    TextInput,
+    LayoutAnimation
     } = React;
 var ArticleTalkCell = require("./ArticleTalkCell.js")
 var ArticleTalk = React.createClass({
@@ -49,16 +52,21 @@ var ArticleTalk = React.createClass({
                     <TouchableHighlight onPress={this._back} underlayColor="#aaa">
                         <Icon name="ios-arrow-left" size={30} color="#aaa" style={styles.button}/>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={this._add} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this.showComment} underlayColor="#aaa">
                         <Icon name="ios-chatboxes-outline" size={30} color="#aaa" style={styles.rightbutton}/>
                     </TouchableHighlight>
                 </View>
-                <View style={styles.publishContainer}>
+                <View style={[styles.publishContainer,{opacity:this.state.publishOpacity}]}>
+
                     <View style={styles.publishLayer}></View>
-                    <View style={styles.publishView}>
+                    <View style={[styles.publishView,{bottom:this.state.publishBottom}]}>
+
                         <TextInput style={styles.publishInput}></TextInput>
-                        <TouchableHighlight>
-                            <View style={styles.publishSubmit}><Text style={styles.publishSubmitText}>提交评论</Text></View>
+                        <TouchableHighlight style={styles.publishSubmit} underlayColor="#ddd">
+                            <View ><Text style={styles.publishSubmitText}>提交评论</Text></View>
+                        </TouchableHighlight>
+                        <TouchableHighlight onPress={this.hideComment} underlayColor="#eee" style={styles.publishClose}>
+                            <Icon name="ios-close-empty" size={40} color="#999" style={{width:30,height:30,marginLeft:7}}/>
                         </TouchableHighlight>
                     </View>
                 </View>
@@ -82,13 +90,17 @@ var ArticleTalk = React.createClass({
                 rowHasChanged: (row1, row2) => row1.id !== row2.id,
             }),
             talks:[],
-            isLoading:false
+            isLoading:false,
+            publishOpacity:1,
+            publishBottom:0
         };
     },
 
     componentDidMount: function() {
         this.setStates({
             id:this.props.article.id,
+            publishOpacity:1,
+            publishBottom:0
         })
     },
     renderRow: function(
@@ -125,6 +137,39 @@ var ArticleTalk = React.createClass({
     },
     _back:function(){
         this.props.navigator.pop();
+    },
+    showComment:function(){
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.spring,()=>{
+            console.log("done")
+        },(error)=>{
+            console.log(error)
+        });
+        this.setState({
+            //publishOpacity:1,
+            publishBottom:0
+        })
+    },
+    hideComment:function(){
+        //LayoutAnimation.configureNext(LayoutAnimation.Presets.spring,()=>{
+        //    console.log("done")
+        //    this.setState({
+        //        publishOpacity:0,
+        //    })
+        //},(error)=>{
+        //    console.log("error")
+        //});
+        //this.setState({
+        //    publishBottom:-300
+        //})
+
+        Animated.sequence([            // spring to start and twirl after decay finishes
+            Animated.spring(this.state.publishBottom, {
+                toValue: -300    // return to start
+            }),
+            Animated.spring(this.state.publishOpacity, {
+                toValue: 0    // return to start
+            }),
+        ]).start();
     }
 
 });
@@ -240,17 +285,24 @@ var styles = StyleSheet.create({
         height:300,
         backgroundColor:"#fff"
     },
+    publishClose:{
+        position:"absolute",
+        right:5,
+        top:5,
+        height:30,
+        width:30,
+    },
     publishInput:{
         flex:1,
-        margin:20,
+        margin:15,
         borderWidth:1,
         borderColor:"#ddd",
-        marginBottom:15
+        marginBottom:15,
+        marginTop:40
     },
     publishSubmit:{
-        flex:1,
-        marginLeft:20,
-        marginRight:20,
+        marginLeft:15,
+        marginRight:15,
         backgroundColor:"#46afe4",
         borderRadius:3,
         overflow:"hidden",
@@ -261,7 +313,7 @@ var styles = StyleSheet.create({
     publishSubmitText:{
         fontSize:16,
         color:"#fff",
-        marginTop:12
+        marginTop:10
 
     }
 });

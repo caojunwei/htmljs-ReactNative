@@ -7,6 +7,7 @@ var React = require('react-native');
 var ArticleCell = require("./ArticleCell.js")
 var ArticleView = require("./ArticleView.js")
 var ArticleTalk = require("./ArticleTalk.js")
+var LoginView = require("./LoginView.js")
 var RefreshableListView = require('react-native-refreshable-listview')
 var {
     AppRegistry,
@@ -84,6 +85,10 @@ var ArticleList = React.createClass({
 
     componentDidMount: function() {
         this.queryArticles('');
+        setTimeout(()=>{
+            this.showLogin();
+        },300)
+
     },
     queryArticles: function(){
         this.setState({
@@ -136,6 +141,12 @@ var ArticleList = React.createClass({
         this.props.navigator.push({
             component: ArticleTalk,
             passProps: {article},
+        })
+    },
+    showLogin:function(){
+        this.props.navigator.push({
+            component: LoginView,
+            passProps: {},
         })
     }
 });

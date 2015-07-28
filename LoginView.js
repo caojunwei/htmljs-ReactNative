@@ -5,16 +5,19 @@
 
 var React = require('react-native');
 var Icon = require('react-native-vector-icons/Ionicons');
+var PickImageView = require("./PickImageView.js");
 var {
     AppRegistry,
     StyleSheet,
     Text,
     View,
     TextInput,
-    TouchableHighlight
+    TouchableHighlight,
+    AsyncStorage,
+    Image
     } = React;
 
-var MessageTip = React.createClass({
+var LoginView = React.createClass({
     render: function() {
         return (
             <View style={styles.container}>
@@ -22,15 +25,29 @@ var MessageTip = React.createClass({
                 <View style={styles.content}>
                     <Text style={styles.title}>登录/注册</Text>
                     <View style={styles.form}>
-                        <TextInput placeholder="输入注册邮箱" style={styles.input}>
+                        <TextInput placeholder="输入注册邮箱" style={styles.input} onChangeText={(text) => {
+                            this.checkEmail(text);
+                        }}>
 
                         </TextInput>
                         <TextInput placeholder="输入密码" password={true} style={styles.input}>
 
                         </TextInput>
+                        {this.state.isLogin?null:
+                            <View>
+                                <TextInput placeholder="输入昵称"  style={styles.input}>
+
+                                </TextInput>
+                                <Text style={{marginLeft:40,marginRight:40,color:"#aaa",textAlign:"center"}}>然后上传个掉渣天的头像吧</Text>
+                                <TouchableHighlight onPress={this._pickImage} style={{flexDirection:"row",alignItems:"center",justifyContent:"space-around",marginLeft:40,marginRight:40}}>
+                                    <Image source={{uri:'http://htmljs.b0.upaiyun.com/uploads/1438098680186-1bb87d41d15fe27b500a4bfcde01bb0e.png'}} style={styles.head_pic}></Image>
+                                </TouchableHighlight>
+                            </View>
+                        }
                         <TouchableHighlight onPress={this._submit} underlayColor="#eee" style={styles.submit}>
-                            <View style={styles.button}><Text style={styles.buttonText}>登录或注册</Text></View>
+                            <View style={styles.button}><Text style={styles.buttonText}>{this.state.isLogin?"登录":"注册"}</Text></View>
                         </TouchableHighlight>
+
                     </View>
                 </View>
                 <TouchableHighlight onPress={this._back} underlayColor="#eee" style={styles.close}>
@@ -39,22 +56,59 @@ var MessageTip = React.createClass({
             </View>
         );
     },
+    /**
+     * 输入email字段的时候判断此email是否是注册过的,没注册的把界面变成注册界面
+     * @param email
+     */
+    checkEmail:function(email){
+        if(/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(email)){
+            fetch("http://www.html-js.com/user/check.json?email="+email)
+                .then((response) => response.json())
+                .catch((error) => {
 
+                })
+                .then((responseData) => {
+                    if(responseData.success){
+                        this.setState({
+                            isLogin:false
+                        })
+                    }else{
+                        this.setState({
+                            isLogin:true
+                        })
+                    }
+                })
+                .done();
+        }
+
+    },
     getInitialState: function() {
         return {
+            isLogin:false
         };
     },
     _back:function(){
         this.props.navigator.pop();
     },
+    _pickImage:function(){
+      this.props.navigator.push({
+          component:PickImageView
+      })
+    },
+    /**
+     * 提交登录/注册
+     * @private
+     */
     _submit:function(){
 
     },
     /**
-     * 获取当前登录用户,如果没登陆,返回空
+     * 获取当前登录用户token,如果没登陆,返回空
      */
-    getCurrentUser:function(){
-
+    getToken:function(cb){
+        AsyncStorage.getItem("token",function(err,token){
+            cb(err,token);
+        })
     }
 
 });
@@ -141,8 +195,14 @@ var styles = StyleSheet.create({
         height:30,
         width:30,
     },
+    head_pic:{
+        width:50,
+        height:50,
+        marginTop:20,
+        opacity:0.6
+    }
 });
 
-AppRegistry.registerComponent('MessageTip', () => MessageTip);
+AppRegistry.registerComponent('LoginView', () => LoginView);
 
-module.exports = MessageTip;
+module.exports = LoginView;

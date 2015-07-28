@@ -97,7 +97,7 @@ var ArticleTalk = React.createClass({
     },
 
     componentDidMount: function() {
-        this.setStates({
+        this.setState({
             id:this.props.article.id,
             publishOpacity:1,
             publishBottom:0
@@ -161,15 +161,20 @@ var ArticleTalk = React.createClass({
         //this.setState({
         //    publishBottom:-300
         //})
-
-        Animated.sequence([            // spring to start and twirl after decay finishes
-            Animated.spring(this.state.publishBottom, {
-                toValue: -300    // return to start
-            }),
-            Animated.spring(this.state.publishOpacity, {
-                toValue: 0    // return to start
-            }),
-        ]).start();
+        this.setState({
+            publishBottom:0
+        })
+        Animated.spring(this.state.publishBottom, {
+            toValue: -300    // return to start
+        }).start()
+        //Animated.sequence([            // spring to start and twirl after decay finishes
+        //    Animated.spring(this.state.publishBottom, {
+        //        toValue: -300    // return to start
+        //    }),
+        //    Animated.spring(this.state.publishOpacity, {
+        //        toValue: 0    // return to start
+        //    }),
+        //]).start();
     }
 
 });
@@ -198,7 +203,6 @@ var styles = StyleSheet.create({
         height:44,
         backgroundColor:"#fff",
         flexDirection:"row",
-
         borderWidth:1,
         borderColor:"#fff",
         borderTopColor:"#ddd",

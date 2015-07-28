@@ -30,13 +30,13 @@ var ArticleView = React.createClass({
                      startInLoadingState={true}
                 ></WebView>
                 <View style={styles.footer}>
-                    <TouchableHighlight onPress={this._back} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this._back} underlayColor="#aaa" style={styles.buttonItem}>
                         <Icon name="ios-arrow-left" size={30} color="#aaa" style={styles.button}/>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={this._add} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this._add} underlayColor="#aaa" style={styles.buttonItem}>
                         <Icon name="ios-heart-outline" size={30} color="#aaa" style={styles.button}/>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={this._add} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this._add} underlayColor="#aaa" style={styles.buttonItem}>
                         <Icon name="ios-chatboxes-outline" size={30} color="#aaa" style={styles.button}/>
                     </TouchableHighlight>
                 </View>
@@ -51,7 +51,7 @@ var ArticleView = React.createClass({
     },
 
     componentDidMount: function() {
-        this.setStates({
+        this.setState({
             url:"http://www.html-js.com/article/"+this.props.article.id+"?is_clear=1"
         })
     },
@@ -95,6 +95,10 @@ var styles = StyleSheet.create({
         width:30,
         height:30,
         marginTop:5
+    },
+    buttonItem{
+        height:30,
+        flex:1
     },
     title:{
         fontSize:16,

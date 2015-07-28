@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bd34e89-00f3-414b-97f2-b193d5210415" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/htmljs_ReactNative_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArticleTalk.js" afterPath="$PROJECT_DIR$/ArticleTalk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iOS/AppDelegate.m" afterPath="$PROJECT_DIR$/iOS/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArticleList.js" afterPath="$PROJECT_DIR$/ArticleList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginView.js" afterPath="$PROJECT_DIR$/LoginView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="htmljs-ReactNative.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,57 +30,20 @@
         <entry file="file://$PROJECT_DIR$/ArticleTalk.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+              <caret line="306" column="6" selection-start-line="300" selection-start-column="4" selection-end-line="306" selection-end-column="6" />
               <folding>
-                <marker date="1437883195000" expanded="true" signature="520:3065" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="623:762" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="779:1344" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="1383:1604" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="1442:1580" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="1627:2145" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="1676:1879" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="1900:2121" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="2162:3045" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="2322:3021" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="2493:2702" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="2727:2993" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="4018:4065" placeholder="&lt;xml/&gt;" />
-                <marker date="1437883195000" expanded="true" signature="5568:5914" placeholder="..." />
+                <marker date="1437921161000" expanded="true" signature="6089:6428" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="LoginView.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LoginView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13651878">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.4651163">
+              <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleCell.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ArticleCell.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="80" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="80" />
-              <folding>
-                <marker date="1437837598000" expanded="true" signature="1067:3133" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="1082:3119" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="1143:3089" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="1383:3071" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="1433:1543" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="1558:1942" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="1611:1748" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="1765:1919" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="2002:2265" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="2301:3051" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="2355:2610" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="2627:3028" placeholder="&lt;xml/&gt;" />
-                <marker date="1437837598000" expanded="true" signature="2719:2990" placeholder="&lt;xml/&gt;" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -92,8 +56,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ArticleTalk.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/ArticleCell.js" />
+        <option value="$PROJECT_DIR$/ArticleTalkCell.js" />
+        <option value="$PROJECT_DIR$/ArticleTalk.js" />
+        <option value="$PROJECT_DIR$/MessageTip.js" />
+        <option value="$PROJECT_DIR$/ArticleView.js" />
+        <option value="$PROJECT_DIR$/ArticleList.js" />
+        <option value="$PROJECT_DIR$/LoginView.js" />
       </list>
     </option>
   </component>
@@ -105,8 +75,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="239" />
-    <option name="y" value="207" />
+    <option name="x" value="80" />
+    <option name="y" value="221" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -117,7 +87,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -133,6 +103,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -153,8 +125,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -162,13 +132,52 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptLanguageLevel" value="JSX" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2bd34e89-00f3-414b-97f2-b193d5210415" name="Default" comment="" />
@@ -179,27 +188,35 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="239" y="207" width="1400" height="1000" extended-state="0" />
+    <frame x="80" y="221" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -209,48 +226,45 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ArticleCell.js">
+    <entry file="file://$PROJECT_DIR$/ArticleTalk.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="80" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="80" />
+          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
           <folding>
-            <marker date="1437837598000" expanded="true" signature="1067:3133" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="1082:3119" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="1143:3089" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="1383:3071" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="1433:1543" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="1558:1942" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="1611:1748" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="1765:1919" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="2002:2265" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="2301:3051" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="2355:2610" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="2627:3028" placeholder="&lt;xml/&gt;" />
-            <marker date="1437837598000" expanded="true" signature="2719:2990" placeholder="&lt;xml/&gt;" />
+            <marker date="1437921161000" expanded="true" signature="6089:6428" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ArticleTalk.js">
+    <entry file="file://$PROJECT_DIR$/MessageTip.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-          <folding>
-            <marker date="1437883195000" expanded="true" signature="520:3065" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="623:762" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="779:1344" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="1383:1604" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="1442:1580" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="1627:2145" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="1676:1879" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="1900:2121" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="2162:3045" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="2322:3021" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="2493:2702" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="2727:2993" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="4018:4065" placeholder="&lt;xml/&gt;" />
-            <marker date="1437883195000" expanded="true" signature="5568:5914" placeholder="..." />
-          </folding>
+          <caret line="6" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="6" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoginView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleCell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="171" column="2" selection-start-line="171" selection-start-column="2" selection-end-line="175" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -258,14 +272,85 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native/Libraries/Animation/LayoutAnimation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native/Libraries/Animation/Animated/Animated.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1051" column="21" selection-start-line="1051" selection-start-column="3" selection-end-line="1051" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13651878">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="24" />
+        <state vertical-scroll-proportion="-4.375">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleTalkCell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53156143">
+          <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleCell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="171" column="2" selection-start-line="171" selection-start-column="2" selection-end-line="175" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45182723">
+          <caret line="110" column="6" selection-start-line="86" selection-start-column="4" selection-end-line="110" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MessageTip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleTalk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="306" column="6" selection-start-line="300" selection-start-column="4" selection-end-line="306" selection-end-column="6" />
+          <folding>
+            <marker date="1437921161000" expanded="true" signature="6089:6428" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoginView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4651163">
+          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
           <folding />
         </state>
       </provider>

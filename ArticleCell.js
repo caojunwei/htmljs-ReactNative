@@ -118,7 +118,6 @@ var styles = StyleSheet.create({
     width:16,
     height:16,
     borderRadius:8,
-    overflow:"hidden",
   },
   movieYear: {
     color: '#999999',

@@ -52,24 +52,24 @@ var ArticleTalk = React.createClass({
                     <TouchableHighlight onPress={this._back} underlayColor="#aaa">
                         <Icon name="ios-arrow-left" size={30} color="#aaa" style={styles.button}/>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={this.showComment} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this._add} underlayColor="#aaa">
                         <Icon name="ios-chatboxes-outline" size={30} color="#aaa" style={styles.rightbutton}/>
                     </TouchableHighlight>
                 </View>
-                <View style={[styles.publishContainer,{opacity:this.state.publishOpacity}]}>
+                <Animated.View style={[styles.publishContainer,{opacity:this.state.publishOpacity}]}>
 
                     <View style={styles.publishLayer}></View>
-                    <View style={[styles.publishView,{bottom:this.state.publishBottom}]}>
+                    <Animated.View style={[styles.publishView,{bottom:this.state.publishBottom}]}>
 
-                        <TextInput style={styles.publishInput}></TextInput>
+                        <TextInput style={styles.publishInput} multiline={true} value={this.state.replyTalk?('回复 @'+this.state.replyTalk.user_nick+':'):''}></TextInput>
                         <TouchableHighlight style={styles.publishSubmit} underlayColor="#ddd">
                             <View ><Text style={styles.publishSubmitText}>提交评论</Text></View>
                         </TouchableHighlight>
                         <TouchableHighlight onPress={this.hideComment} underlayColor="#eee" style={styles.publishClose}>
                             <Icon name="ios-close-empty" size={40} color="#999" style={{width:30,height:30,marginLeft:7}}/>
                         </TouchableHighlight>
-                    </View>
-                </View>
+                    </Animated.View>
+                </Animated.View>
             </View>
         );
     },
@@ -91,11 +91,13 @@ var ArticleTalk = React.createClass({
             }),
             talks:[],
             isLoading:false,
-            publishOpacity:1,
-            publishBottom:0
+            publishOpacity:new Animated.Value(0),
+            publishBottom:new Animated.Value(-300),
+            replyTalk:{}
         };
     },
 
+<<<<<<< HEAD
     componentDidMount: function() {
         this.setState({
             id:this.props.article.id,
@@ -103,17 +105,20 @@ var ArticleTalk = React.createClass({
             publishBottom:0
         })
     },
+=======
+>>>>>>> 41c75b1f66979739e93f5da919bbe2afdfbf2694
     renderRow: function(
         talk: Object
     ) {
         return (
             <ArticleTalkCell
-                talk={talk} />//onSelect={() => this.selectArticle(article)}
+                talk={talk} onSelect={() => this.selectTalk(talk)} />
 
         );
     },
 
     componentDidMount: function() {
+        console.log(this.state.publishBottom._value)
         this.queryTalks('');
     },
     queryTalks: function(){
@@ -138,16 +143,28 @@ var ArticleTalk = React.createClass({
     _back:function(){
         this.props.navigator.pop();
     },
-    showComment:function(){
-        LayoutAnimation.configureNext(LayoutAnimation.Presets.spring,()=>{
-            console.log("done")
-        },(error)=>{
-            console.log(error)
-        });
+    selectTalk:function(talk){
         this.setState({
-            //publishOpacity:1,
-            publishBottom:0
+            replyTalk:talk
+
         })
+        this.showComment()
+
+    },
+    _add:function(){
+        this.setState({
+            replyTalk:""
+
+        })
+        this.showComment()
+    },
+    showComment:function(){
+        Animated.spring(this.state.publishBottom, {
+            toValue: 0,
+        }).start();
+        Animated.spring(this.state.publishOpacity, {
+            toValue: 1   // return to start
+        }).start();
     },
     hideComment:function(){
         //LayoutAnimation.configureNext(LayoutAnimation.Presets.spring,()=>{
@@ -161,6 +178,7 @@ var ArticleTalk = React.createClass({
         //this.setState({
         //    publishBottom:-300
         //})
+<<<<<<< HEAD
         this.setState({
             publishBottom:0
         })
@@ -170,6 +188,18 @@ var ArticleTalk = React.createClass({
         //Animated.sequence([            // spring to start and twirl after decay finishes
         //    Animated.spring(this.state.publishBottom, {
         //        toValue: -300    // return to start
+=======
+        var config = {tension: 40, friction: 3};
+        Animated.spring(this.state.publishBottom, {
+            toValue: -300,
+        }).start();
+        Animated.spring(this.state.publishOpacity, {
+            toValue: 0    // return to start
+        }).start();
+        //Animated.sequence([            // spring to start and twirl after decay finishes
+        //    Animated.spring(this.state.publishBottom, {
+        //        toValue: -300,
+>>>>>>> 41c75b1f66979739e93f5da919bbe2afdfbf2694
         //    }),
         //    Animated.spring(this.state.publishOpacity, {
         //        toValue: 0    // return to start
@@ -302,7 +332,9 @@ var styles = StyleSheet.create({
         borderWidth:1,
         borderColor:"#ddd",
         marginBottom:15,
-        marginTop:40
+        marginTop:40,
+        fontSize:16,
+        padding:10
     },
     publishSubmit:{
         marginLeft:15,

@@ -95,8 +95,8 @@ var styles = StyleSheet.create({
         flex:1,
         alignItems:"center",
         textAlign:"center",
-        marginTop:60,
-        marginBottom:60,
+        marginTop:70,
+        marginBottom:70,
     },
     input:{
       marginLeft:40,
@@ -108,7 +108,7 @@ var styles = StyleSheet.create({
         paddingLeft:10,
         fontSize:18,
         color:"#666",
-        marginBottom:30
+        marginBottom:20
     },
     submit:{
         marginLeft:40,

@@ -33,16 +33,16 @@ var ArticleView = React.createClass({
                      startInLoadingState={true}
                 ></WebView>
                 <View style={styles.footer}>
-                    <TouchableHighlight onPress={this._back} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this._back} underlayColor="#eee" style={styles.buttonItem}>
                         <Icon name="ios-arrow-left" size={30} color="#aaa" style={styles.button}/>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={this._zan} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this._zan} underlayColor="#eee" style={styles.buttonItem}>
                         <View style={styles.buttonContainer}>
                         <Icon name="ios-heart-outline" size={30} color="#aaa" style={styles.button}/>
                             <Text style={{fontSize:13,color:"#666",marginLeft:4,lineHeight:28}}>{this.props.article.zan_count}</Text>
                         </View>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={this._toTalk} underlayColor="#aaa">
+                    <TouchableHighlight onPress={this._toTalk} underlayColor="#eee" style={styles.buttonItem}>
                         <View style={styles.buttonContainer}>
                         <Icon name="ios-chatboxes-outline" size={30} color="#aaa" style={styles.button}/>
                         <Text style={{fontSize:13,color:"#666",marginLeft:4,lineHeight:28}}>{this.props.article.comment_count}</Text>
@@ -72,6 +72,7 @@ var ArticleView = React.createClass({
     },
     _zan:function(){
         this.refs.messageTip.show("点赞成功")
+        this.props.article.zan_count = this.props.article.zan_count +1;
     },
     _toTalk:function(){
         this.props.navigator.push({
@@ -97,7 +98,6 @@ var styles = StyleSheet.create({
         height:44,
         backgroundColor:"#46afe4",
         alignItems:"center",
-
     },
     footer:{
         height:44,
@@ -117,6 +117,13 @@ var styles = StyleSheet.create({
         width:30,
         height:30,
         marginTop:5
+    },
+    buttonItem:{
+        height:44,
+        flex:1,
+        justifyContent:"space-around",
+        flexDirection:"row",
+
     },
     title:{
         fontSize:16,

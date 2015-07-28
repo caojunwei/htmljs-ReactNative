@@ -62,12 +62,13 @@ var styles = StyleSheet.create({
     tipText:{
         backgroundColor:"#333",
         color:"#fff",
-        padding:5,
-        paddingLeft:8,
-        paddingRight:8,
+        padding:8,
+        paddingLeft:10,
+        paddingRight:10,
         borderRadius:5,
+        overflow:"hidden",
         marginTop:200,
-        fontSize:12
+        fontSize:14
     }
 });
 

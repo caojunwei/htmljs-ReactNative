@@ -97,6 +97,7 @@ var ArticleTalk = React.createClass({
         };
     },
 
+
     renderRow: function(
         talk: Object
     ) {
@@ -168,6 +169,7 @@ var ArticleTalk = React.createClass({
         //this.setState({
         //    publishBottom:-300
         //})
+
         var config = {tension: 40, friction: 3};
         Animated.spring(this.state.publishBottom, {
             toValue: -300,
@@ -211,7 +213,6 @@ var styles = StyleSheet.create({
         height:44,
         backgroundColor:"#fff",
         flexDirection:"row",
-
         borderWidth:1,
         borderColor:"#fff",
         borderTopColor:"#ddd",

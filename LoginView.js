@@ -48,7 +48,7 @@ var MessageTip = React.createClass({
         this.props.navigator.pop();
     },
     _submit:function(){
-        
+
     },
     /**
      * 获取当前登录用户,如果没登陆,返回空

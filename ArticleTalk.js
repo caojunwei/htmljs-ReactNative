@@ -97,7 +97,7 @@ var ArticleTalk = React.createClass({
         };
     },
 
-    
+
     renderRow: function(
         talk: Object
     ) {

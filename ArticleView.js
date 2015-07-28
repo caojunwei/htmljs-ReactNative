@@ -97,7 +97,6 @@ var styles = StyleSheet.create({
         height:44,
         backgroundColor:"#46afe4",
         alignItems:"center",
-
     },
     footer:{
         height:44,
@@ -118,7 +117,7 @@ var styles = StyleSheet.create({
         height:30,
         marginTop:5
     },
-    buttonItem{
+    buttonItem:{
         height:30,
         flex:1
     },

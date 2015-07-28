@@ -97,16 +97,7 @@ var ArticleTalk = React.createClass({
         };
     },
 
-<<<<<<< HEAD
-    componentDidMount: function() {
-        this.setState({
-            id:this.props.article.id,
-            publishOpacity:1,
-            publishBottom:0
-        })
-    },
-=======
->>>>>>> 41c75b1f66979739e93f5da919bbe2afdfbf2694
+    
     renderRow: function(
         talk: Object
     ) {
@@ -178,17 +169,7 @@ var ArticleTalk = React.createClass({
         //this.setState({
         //    publishBottom:-300
         //})
-<<<<<<< HEAD
-        this.setState({
-            publishBottom:0
-        })
-        Animated.spring(this.state.publishBottom, {
-            toValue: -300    // return to start
-        }).start()
-        //Animated.sequence([            // spring to start and twirl after decay finishes
-        //    Animated.spring(this.state.publishBottom, {
-        //        toValue: -300    // return to start
-=======
+
         var config = {tension: 40, friction: 3};
         Animated.spring(this.state.publishBottom, {
             toValue: -300,
@@ -199,7 +180,6 @@ var ArticleTalk = React.createClass({
         //Animated.sequence([            // spring to start and twirl after decay finishes
         //    Animated.spring(this.state.publishBottom, {
         //        toValue: -300,
->>>>>>> 41c75b1f66979739e93f5da919bbe2afdfbf2694
         //    }),
         //    Animated.spring(this.state.publishOpacity, {
         //        toValue: 0    // return to start

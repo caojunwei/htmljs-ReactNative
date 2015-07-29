@@ -39,7 +39,7 @@ var LoginView = React.createClass({
 
                                 </TextInput>
                                 <Text style={{marginLeft:40,marginRight:40,color:"#aaa",textAlign:"center"}}>然后上传个掉渣天的头像吧</Text>
-                                <TouchableHighlight onPress={this._pickImage} style={{flexDirection:"row",alignItems:"center",justifyContent:"space-around",marginLeft:40,marginRight:40}}>
+                                <TouchableHighlight underlayColor="#fff" onPress={this._pickImage} style={{flexDirection:"row",alignItems:"center",justifyContent:"space-around",marginLeft:40,marginRight:40}}>
                                     <Image source={{uri:'http://htmljs.b0.upaiyun.com/uploads/1438098680186-1bb87d41d15fe27b500a4bfcde01bb0e.png'}} style={styles.head_pic}></Image>
                                 </TouchableHighlight>
                             </View>

@@ -13,7 +13,8 @@ var {
     TouchableHighlight,
     TouchableOpacity,
     Image,
-    Text
+    Text,
+    AlertIOS
     } = React;
 var CameraRollView = require("./CameraRollView.js")
 var PickImageView = React.createClass({
@@ -26,6 +27,7 @@ var PickImageView = React.createClass({
                         ref="cameraroll"
                         batchSize={20}
                         groupTypes="SavedPhotos"
+                        imagesPerRow={4}
                         renderImage={this._renderImage}
                         style={{}}
                         />
@@ -40,10 +42,12 @@ var PickImageView = React.createClass({
         var imageSize = 75;
         var imageStyle = [{margin:4}, {width: imageSize, height: imageSize}];
         return (
+            <TouchableHighlight  onPress={this._pick(asset.node.image)} underlayColor="#eee">
                     <Image
                         source={asset.node.image}
                         style={{width:80,height:80,margin:4,alignSelf:"flex-start",flex:1}}
                         />
+            </TouchableHighlight>
         );
     },
     getInitialState: function() {
@@ -51,8 +55,43 @@ var PickImageView = React.createClass({
             isLogin:false
         };
     },
-    _back:function(){
+    _pick:function(image){
         this.props.navigator.pop();
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://posttestserver.com/post.php');
+        xhr.onload = () => {
+            this.setState({isUploading: false});
+            if (xhr.status !== 200) {
+                AlertIOS.alert(
+                    'Upload failed',
+                    'Expected HTTP 200 OK response, got ' + xhr.status
+                );
+                return;
+            }
+            if (!xhr.responseText) {
+                AlertIOS.alert(
+                    'Upload failed',
+                    'No response payload.'
+                );
+                return;
+            }
+            var index = xhr.responseText.indexOf('http://www.posttestserver.com/');
+            if (index === -1) {
+                AlertIOS.alert(
+                    'Upload failed',
+                    'Invalid response payload.'
+                );
+                return;
+            }
+            var url = xhr.responseText.slice(index).split('\n')[0];
+            LinkingIOS.openURL(url);
+        };
+        var formdata = new FormData();
+        if (this.state.randomPhoto) {
+                formdata.append('image',image);
+        }
+
+        xhr.send(formdata);
     },
 
 
@@ -90,9 +129,16 @@ var styles = StyleSheet.create({
     },
     content:{
         flex:1,
+        marginTop:30,
         flexDirection:"row",
-        backgroundColor:"#ddd",
-    }
+    },
+    close:{
+        position:"absolute",
+        right:10,
+        top:30,
+        height:30,
+        width:30,
+    },
 });
 
 AppRegistry.registerComponent('PickImageView', () => PickImageView);

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bd34e89-00f3-414b-97f2-b193d5210415" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CameraRollView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PickImageView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginView.js" afterPath="$PROJECT_DIR$/LoginView.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CameraRollView.js" afterPath="$PROJECT_DIR$/camera/CameraRollView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PickImageView.js" afterPath="$PROJECT_DIR$/PickImageView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="htmljs-ReactNative.iws" />
@@ -31,7 +30,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="300" column="6" selection-start-line="300" selection-start-column="6" selection-end-line="300" selection-end-column="6" />
-              <folding />
+              <folding>
+                <marker date="1438095436000" expanded="true" signature="520:3187" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="623:762" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="779:1344" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="1383:1604" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="1442:1580" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="1627:2138" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="1676:1879" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="1900:2114" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="2155:3167" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="2324:3134" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="2597:2806" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="2831:3097" placeholder="&lt;xml/&gt;" />
+                <marker date="1438095436000" expanded="true" signature="4035:4121" placeholder="&lt;xml/&gt;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,7 +54,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="141" column="21" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="21" />
-              <folding />
+              <folding>
+                <marker date="1438011767000" expanded="true" signature="587:1650" placeholder="&lt;xml/&gt;" />
+                <marker date="1438011767000" expanded="true" signature="682:1404" placeholder="&lt;xml/&gt;" />
+                <marker date="1438011767000" expanded="true" signature="1439:1628" placeholder="&lt;xml/&gt;" />
+                <marker date="1438011767000" expanded="true" signature="1490:1604" placeholder="&lt;xml/&gt;" />
+                <marker date="1438011767000" expanded="true" signature="1755:1925" placeholder="&lt;xml/&gt;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,8 +69,21 @@
         <entry file="file://$PROJECT_DIR$/LoginView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="106" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="156" />
-              <folding />
+              <caret line="42" column="106" selection-start-line="41" selection-start-column="127" selection-end-line="41" selection-end-column="177" />
+              <folding>
+                <marker date="1438175825000" expanded="true" signature="402:3844" placeholder="{...}" />
+                <marker date="1438175825000" expanded="true" signature="427:2532" placeholder="{...}" />
+                <marker date="1438175825000" expanded="true" signature="458:2515" placeholder="&lt;xml/&gt;" />
+                <marker date="1438175825000" expanded="true" signature="561:2241" placeholder="&lt;xml/&gt;" />
+                <marker date="1438175825000" expanded="true" signature="671:2217" placeholder="&lt;xml/&gt;" />
+                <marker date="1438175825000" expanded="true" signature="722:917" placeholder="&lt;xml/&gt;" />
+                <marker date="1438175825000" expanded="true" signature="942:1047" placeholder="&lt;xml/&gt;" />
+                <marker date="1438175825000" expanded="true" signature="1126:1872" placeholder="&lt;xml/&gt;" />
+                <marker date="1438175825000" expanded="true" signature="1165:1263" placeholder="&lt;xml/&gt;" />
+                <marker date="1438175825000" expanded="true" signature="1425:1836" placeholder="&lt;xml/&gt;" />
+                <marker date="1438175825000" expanded="true" signature="1923:2188" placeholder="&lt;xml/&gt;" />
+                <marker date="1438175825000" expanded="true" signature="2258:2495" placeholder="&lt;xml/&gt;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,9 +91,23 @@
       <file leaf-file-name="PickImageView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PickImageView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55479455">
-              <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.86378735">
+              <caret line="82" column="35" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CameraRollView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/camera/CameraRollView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="101" column="38" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
+              <folding>
+                <marker date="1438099723000" expanded="true" signature="2313:2439" placeholder="&lt;xml/&gt;" />
+                <marker date="1438099723000" expanded="true" signature="4265:4512" placeholder="&lt;xml/&gt;" />
+                <marker date="1438099723000" expanded="true" signature="5249:5311" placeholder="&lt;xml/&gt;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,8 +141,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="80" />
-    <option name="y" value="221" />
+    <option name="x" value="194" />
+    <option name="y" value="364" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -133,30 +179,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htmljs-ReactNative" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htmljs-ReactNative" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htmljs-ReactNative" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htmljs-ReactNative" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htmljsTests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -167,6 +189,11 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptLanguageLevel" value="JSX" />
     <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/camera" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -222,7 +249,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="80" y="221" width="1400" height="1000" extended-state="0" />
+    <frame x="194" y="364" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -264,7 +291,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1438095436000" expanded="true" signature="520:3187" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="623:762" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="779:1344" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1383:1604" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1442:1580" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1627:2138" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1676:1879" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1900:2114" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2155:3167" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2324:3134" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2597:2806" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2831:3097" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="4035:4121" placeholder="&lt;xml/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="141" column="21" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="21" />
+          <folding>
+            <marker date="1438011767000" expanded="true" signature="587:1650" placeholder="&lt;xml/&gt;" />
+            <marker date="1438011767000" expanded="true" signature="682:1404" placeholder="&lt;xml/&gt;" />
+            <marker date="1438011767000" expanded="true" signature="1439:1628" placeholder="&lt;xml/&gt;" />
+            <marker date="1438011767000" expanded="true" signature="1490:1604" placeholder="&lt;xml/&gt;" />
+            <marker date="1438011767000" expanded="true" signature="1755:1925" placeholder="&lt;xml/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoginView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="106" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="156" />
+          <folding>
+            <marker date="1438175825000" expanded="true" signature="402:3844" placeholder="{...}" />
+            <marker date="1438175825000" expanded="true" signature="427:2532" placeholder="{...}" />
+            <marker date="1438175825000" expanded="true" signature="458:2515" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="561:2241" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="671:2217" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="722:917" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="942:1047" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1126:1872" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1165:1263" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1425:1836" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1923:2188" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="2258:2495" placeholder="&lt;xml/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleTalk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1438095436000" expanded="true" signature="520:3187" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="623:762" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="779:1344" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1383:1604" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1442:1580" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1627:2138" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1676:1879" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1900:2114" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2155:3167" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2324:3134" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2597:2806" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2831:3097" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="4035:4121" placeholder="&lt;xml/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -272,7 +370,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-          <folding />
+          <folding>
+            <marker date="1438095436000" expanded="true" signature="520:3187" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="623:762" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="779:1344" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1383:1604" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1442:1580" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1627:2138" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1676:1879" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1900:2114" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2155:3167" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2324:3134" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2597:2806" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2831:3097" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="4035:4121" placeholder="&lt;xml/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -280,7 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -296,7 +407,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-          <folding />
+          <folding>
+            <marker date="1438175825000" expanded="true" signature="402:3844" placeholder="{...}" />
+            <marker date="1438175825000" expanded="true" signature="427:2532" placeholder="{...}" />
+            <marker date="1438175825000" expanded="true" signature="458:2515" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="561:2241" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="671:2217" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="722:917" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="942:1047" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1126:1872" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1165:1263" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1425:1836" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1923:2188" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="2258:2495" placeholder="&lt;xml/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -304,7 +428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="171" column="2" selection-start-line="171" selection-start-column="2" selection-end-line="175" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -326,7 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1051" column="21" selection-start-line="1051" selection-start-column="3" selection-end-line="1051" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -341,7 +463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53156143">
           <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -349,7 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="171" column="2" selection-start-line="171" selection-start-column="2" selection-end-line="175" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -357,7 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -365,7 +484,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="300" column="6" selection-start-line="300" selection-start-column="6" selection-end-line="300" selection-end-column="6" />
-          <folding />
+          <folding>
+            <marker date="1438095436000" expanded="true" signature="520:3187" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="623:762" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="779:1344" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1383:1604" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1442:1580" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1627:2138" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1676:1879" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="1900:2114" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2155:3167" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2324:3134" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2597:2806" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="2831:3097" placeholder="&lt;xml/&gt;" />
+            <marker date="1438095436000" expanded="true" signature="4035:4121" placeholder="&lt;xml/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -373,23 +506,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="141" column="21" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CameraRollView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44850498">
-          <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
-          <folding />
+          <folding>
+            <marker date="1438011767000" expanded="true" signature="587:1650" placeholder="&lt;xml/&gt;" />
+            <marker date="1438011767000" expanded="true" signature="682:1404" placeholder="&lt;xml/&gt;" />
+            <marker date="1438011767000" expanded="true" signature="1439:1628" placeholder="&lt;xml/&gt;" />
+            <marker date="1438011767000" expanded="true" signature="1490:1604" placeholder="&lt;xml/&gt;" />
+            <marker date="1438011767000" expanded="true" signature="1755:1925" placeholder="&lt;xml/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="106" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="156" />
-          <folding />
+          <caret line="42" column="106" selection-start-line="41" selection-start-column="127" selection-end-line="41" selection-end-column="177" />
+          <folding>
+            <marker date="1438175825000" expanded="true" signature="402:3844" placeholder="{...}" />
+            <marker date="1438175825000" expanded="true" signature="427:2532" placeholder="{...}" />
+            <marker date="1438175825000" expanded="true" signature="458:2515" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="561:2241" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="671:2217" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="722:917" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="942:1047" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1126:1872" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1165:1263" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1425:1836" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="1923:2188" placeholder="&lt;xml/&gt;" />
+            <marker date="1438175825000" expanded="true" signature="2258:2495" placeholder="&lt;xml/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -401,10 +545,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/camera/CameraRollView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="38" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
+          <folding>
+            <marker date="1438099723000" expanded="true" signature="2313:2439" placeholder="&lt;xml/&gt;" />
+            <marker date="1438099723000" expanded="true" signature="4265:4512" placeholder="&lt;xml/&gt;" />
+            <marker date="1438099723000" expanded="true" signature="5249:5311" placeholder="&lt;xml/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PickImageView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55479455">
-          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.86378735">
+          <caret line="82" column="35" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
           <folding />
         </state>
       </provider>

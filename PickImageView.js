@@ -41,6 +41,7 @@ var PickImageView = React.createClass({
     _renderImage(asset) {
         var imageSize = 75;
         var imageStyle = [{margin:4}, {width: imageSize, height: imageSize}];
+        asset.node.image.assetThumbnail = true;
         return (
             <TouchableHighlight  onPress={this._pick(asset.node.image)} underlayColor="#eee">
                     <Image

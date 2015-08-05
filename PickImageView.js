@@ -14,6 +14,7 @@ var {
     TouchableOpacity,
     Image,
     Text,
+    AsyncStorage,
     AlertIOS
     } = React;
 var CameraRollView = require("./camera/CameraRollView.js")
@@ -53,35 +54,43 @@ var PickImageView = React.createClass({
     },
     getInitialState: function() {
         return {
-            isLogin:false
+            isLogin:false,
+            isLoading:false
         };
     },
     _pick:function(image){
-        this.props.navigator.pop();
-        console.log(image)
+        if(this.state.isLoading){
+            return;
+        }
+        this.setState({
+            isLoading:true
+        })
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://www.html-js.com/upload');
         xhr.onload = () => {
-            if (xhr.status !== 200) {
-                AlertIOS.alert(
-                    'Upload failed',
-                    'Expected HTTP 200 OK response, got ' + xhr.status
-                );
-                return;
-            }
-            if (!xhr.responseText) {
-                AlertIOS.alert(
-                    'Upload failed',
-                    'No response payload.'
-                );
-                return;
-            }
+            setTimeout(() =>{
+                this.setState({
+                    isLoading:false
+                })
+            },500)
+
             var data = JSON.parse(xhr.responseText);
-            console.log(data)
+            if(data&&data.success){
+                AsyncStorage.setItem("login_user_pick_image",data.data.filename)
+                //this.props.navigator.pop();
+            }else{
+                AlertIOS.alert(
+                    '哎呀，失败了',
+                    '可能是网络问题额',
+                    [
+                        {text: '好的'},
+                    ]
+                )
+            }
 
         };
         var formdata = new FormData();
-        formdata.append('pic',image);
+        formdata.append('pic',{image, name: 'image.jpg'});
         xhr.send(formdata);
     },
 

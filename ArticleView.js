@@ -140,6 +140,6 @@ var styles = StyleSheet.create({
     }
 });
 
-AppRegistry.registerComponent('ArticleView', () => ArticleView);
+//AppRegistry.registerComponent('ArticleView', () => ArticleView);
 
 module.exports = ArticleView;

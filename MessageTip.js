@@ -72,6 +72,5 @@ var styles = StyleSheet.create({
     }
 });
 
-AppRegistry.registerComponent('MessageTip', () => MessageTip);
 
 module.exports = MessageTip;

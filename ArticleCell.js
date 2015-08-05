@@ -17,6 +17,7 @@
 
 var React = require('react-native');
 var Icon = require('react-native-vector-icons/Ionicons');
+
 var {
   Image,
   PixelRatio,

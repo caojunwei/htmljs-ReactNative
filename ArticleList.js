@@ -8,6 +8,7 @@ var ArticleCell = require("./ArticleCell.js")
 var ArticleView = require("./ArticleView.js")
 var ArticleTalk = require("./ArticleTalk.js")
 var LoginView = require("./LoginView.js")
+var MessageTip = require("./MessageTip.js")
 var RefreshableListView = require('react-native-refreshable-listview')
 var {
     AppRegistry,

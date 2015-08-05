@@ -16,7 +16,7 @@ var {
     Text,
     AlertIOS
     } = React;
-var CameraRollView = require("./CameraRollView.js")
+var CameraRollView = require("./camera/CameraRollView.js")
 var PickImageView = React.createClass({
     render: function() {
         return (
@@ -41,6 +41,7 @@ var PickImageView = React.createClass({
     _renderImage(asset) {
         var imageSize = 75;
         var imageStyle = [{margin:4}, {width: imageSize, height: imageSize}];
+        asset.node.image.assetThumbnail = true;
         return (
             <TouchableHighlight  onPress={this._pick(asset.node.image)} underlayColor="#eee">
                     <Image
@@ -57,10 +58,10 @@ var PickImageView = React.createClass({
     },
     _pick:function(image){
         this.props.navigator.pop();
+        console.log(image)
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://posttestserver.com/post.php');
+        xhr.open('POST', 'http://www.html-js.com/upload');
         xhr.onload = () => {
-            this.setState({isUploading: false});
             if (xhr.status !== 200) {
                 AlertIOS.alert(
                     'Upload failed',
@@ -75,22 +76,12 @@ var PickImageView = React.createClass({
                 );
                 return;
             }
-            var index = xhr.responseText.indexOf('http://www.posttestserver.com/');
-            if (index === -1) {
-                AlertIOS.alert(
-                    'Upload failed',
-                    'Invalid response payload.'
-                );
-                return;
-            }
-            var url = xhr.responseText.slice(index).split('\n')[0];
-            LinkingIOS.openURL(url);
+            var data = JSON.parse(xhr.responseText);
+            console.log(data)
+
         };
         var formdata = new FormData();
-        if (this.state.randomPhoto) {
-                formdata.append('image',image);
-        }
-
+        formdata.append('pic',image);
         xhr.send(formdata);
     },
 

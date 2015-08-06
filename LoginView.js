@@ -5,7 +5,8 @@
 
 var React = require('react-native');
 var Icon = require('react-native-vector-icons/Ionicons');
-var PickImageView = require("./PickImageView.js");
+var MessageTip = require("./MessageTip.js")
+var UIImagePickerManager = require('NativeModules').UIImagePickerManager;
 var {
     AppRegistry,
     StyleSheet,
@@ -53,6 +54,7 @@ var LoginView = React.createClass({
                 <TouchableHighlight onPress={this._back} underlayColor="#eee" style={styles.close}>
                     <Icon name="ios-close-empty" size={40} color="#999" style={{width:30,height:30,marginLeft:7}}/>
                 </TouchableHighlight>
+                <MessageTip ref="messageTip"/>
             </View>
         );
     },
@@ -83,9 +85,12 @@ var LoginView = React.createClass({
 
     },
     getInitialState: function() {
-        AsyncStorage.getItem("login_user_pick_image",function(url){
+        AsyncStorage.getItem("login_user_pick_image",(error,url)=>{
+            console.log(url)
             if(url)
-            this.state.head_pic = url;
+            this.setState({
+                head_pic:url
+            })
         })
         return {
             isLogin:false,
@@ -96,9 +101,67 @@ var LoginView = React.createClass({
         this.props.navigator.pop();
     },
     _pickImage:function(){
-      this.props.navigator.push({
-          component:PickImageView
-      })
+        // Specify any or all of these keys
+        var options = {
+            title: '上传新头像',
+            cancelButtonTitle: '取消',
+            takePhotoButtonTitle: '现场拍',
+            chooseFromLibraryButtonTitle: '相册选',
+            returnBase64Image: false,
+            returnIsVertical: false
+        };
+
+// The first arg will be the options object for customization, the second is
+// your callback which sends string: type, string: response
+        UIImagePickerManager.showImagePicker(options, (type, response) => {
+            if (type !== 'cancel') {
+                var source;
+                if (type === 'data') { // New photo taken OR passed returnBase64Image true -  response is the 64 bit encoded image data string
+                    source = {uri: 'data:image/jpeg;base64,' + response, isStatic: true};
+                } else { // Selected from library - response is the URI to the local file asset
+                    source = {uri: response};
+                }
+                this._upload(source)
+            } else {
+                console.log('Cancel');
+            }
+        });
+    },
+    _upload:function(image){
+        console.log(image)
+        this.refs.messageTip.show("正在上传",true,true)
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://www.html-js.com/upload');
+        xhr.onload = () => {
+            setTimeout(() =>{
+                this.setState({
+                    isLoading:false
+                })
+
+            },500)
+
+            var data = JSON.parse(xhr.responseText);
+            if(data&&data.success){
+                this.refs.messageTip.show("上传成功")
+                this.setState({
+                    head_pic:data.data.filename
+                })
+                AsyncStorage.setItem("login_user_pick_image",data.data.filename)
+                //this.props.navigator.pop();
+            }else{
+                AlertIOS.alert(
+                    '哎呀，失败了',
+                    '可能是网络问题额',
+                    [
+                        {text: '好的'},
+                    ]
+                )
+            }
+
+        };
+        var formdata = new FormData();
+        formdata.append('pic',{...image, name: 'image.jpg'});
+        xhr.send(formdata);
     },
     /**
      * 提交登录/注册

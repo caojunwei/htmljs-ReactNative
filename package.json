@@ -8,6 +8,7 @@
   "dependencies": {
     "moment": "^2.10.3",
     "react-native": "^0.8.0",
+    "react-native-image-picker": "^0.3.2",
     "react-native-refreshable-listview": "*",
     "react-native-vector-icons": "^0.6.6"
   }

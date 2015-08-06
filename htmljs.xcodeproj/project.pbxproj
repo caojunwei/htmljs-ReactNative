@@ -23,6 +23,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		8C6948A41B73AB2400A81F82 /* UIImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6948A31B73AB2400A81F82 /* UIImagePickerManager.m */; };
 		90D43EFF1B6110290065B0BD /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90D43EF81B6110290065B0BD /* Entypo.ttf */; };
 		90D43F001B6110290065B0BD /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90D43EF91B6110290065B0BD /* EvilIcons.ttf */; };
 		90D43F011B6110290065B0BD /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90D43EFA1B6110290065B0BD /* FontAwesome.ttf */; };
@@ -142,6 +143,8 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		8C6948A21B73AB2400A81F82 /* UIImagePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIImagePickerManager.h; path = "node_modules/react-native-image-picker/UIImagePickerManager.h"; sourceTree = "<group>"; };
+		8C6948A31B73AB2400A81F82 /* UIImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIImagePickerManager.m; path = "node_modules/react-native-image-picker/UIImagePickerManager.m"; sourceTree = "<group>"; };
 		90D43EF81B6110290065B0BD /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		90D43EF91B6110290065B0BD /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		90D43EFA1B6110290065B0BD /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				8C6948A21B73AB2400A81F82 /* UIImagePickerManager.h */,
+				8C6948A31B73AB2400A81F82 /* UIImagePickerManager.m */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = htmljs;
@@ -589,6 +594,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				8C6948A41B73AB2400A81F82 /* UIImagePickerManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

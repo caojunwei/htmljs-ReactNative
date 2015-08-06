@@ -5,6 +5,7 @@
 
 var React = require('react-native');
 var Icon = require('react-native-vector-icons/Ionicons');
+var MessageTip = require("./MessageTip.js")
 var {
     AppRegistry,
     StyleSheet,
@@ -36,6 +37,7 @@ var PickImageView = React.createClass({
                 <TouchableHighlight onPress={this._back} underlayColor="#eee" style={styles.close}>
                     <Icon name="ios-close-empty" size={40} color="#999" style={{width:30,height:30,marginLeft:7}}/>
                 </TouchableHighlight>
+                <MessageTip ref="messageTip"/>
             </View>
         );
     },
@@ -44,7 +46,7 @@ var PickImageView = React.createClass({
         var imageStyle = [{margin:4}, {width: imageSize, height: imageSize}];
         asset.node.image.assetThumbnail = true;
         return (
-            <TouchableHighlight  onPress={this._pick(asset.node.image)} underlayColor="#eee">
+            <TouchableHighlight  onPress={()=>{this._pick(asset.node.image)}} image={asset.node.image} underlayColor="#eee" style={{backgroundColor:"#aaa"}}>
                     <Image
                         source={asset.node.image}
                         style={{width:80,height:80,margin:4,alignSelf:"flex-start",flex:1}}
@@ -58,13 +60,16 @@ var PickImageView = React.createClass({
             isLoading:false
         };
     },
+    _back:function(){
+        this.props.navigator.pop();
+    },
     _pick:function(image){
         if(this.state.isLoading){
             return;
         }
-        this.setState({
-            isLoading:true
-        })
+
+        //this.state.isLoading = true;
+        //this.refs.messageTip.show("正在上传")
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://www.html-js.com/upload');
         xhr.onload = () => {
@@ -72,10 +77,12 @@ var PickImageView = React.createClass({
                 this.setState({
                     isLoading:false
                 })
+
             },500)
 
             var data = JSON.parse(xhr.responseText);
             if(data&&data.success){
+                this.refs.messageTip.show("上传成功")
                 AsyncStorage.setItem("login_user_pick_image",data.data.filename)
                 //this.props.navigator.pop();
             }else{

@@ -15,7 +15,8 @@ var {
     TextInput,
     TouchableHighlight,
     AsyncStorage,
-    Image
+    Image,
+    AlertIOS
     } = React;
 
 var LoginView = React.createClass({
@@ -26,17 +27,22 @@ var LoginView = React.createClass({
                 <View style={styles.content}>
                     <Text style={styles.title}>登录/注册</Text>
                     <View style={styles.form}>
-                        <TextInput placeholder="输入注册邮箱" style={styles.input} onChangeText={(text) => {
+                        <TextInput placeholder="输入注册邮箱" style={styles.input} value={this.state.email} onChangeText={(text) => {
                             this.checkEmail(text);
-                        }}>
+                            this._valueChange("email",text)
+                        }} autoFocus={true}>
 
                         </TextInput>
-                        <TextInput placeholder="输入密码" password={true} style={styles.input}>
+                        <TextInput placeholder="输入密码" password={true} style={styles.input} value={this.state.password}  onChangeText={(text) => {
+                            this._valueChange("password",text)
+                        }} returnKeyType="join">
 
                         </TextInput>
                         {this.state.isLogin?null:
                             <View>
-                                <TextInput placeholder="输入昵称"  style={styles.input}>
+                                <TextInput placeholder="输入昵称"  style={styles.input} value={this.state.nick}   onChangeText={(text) => {
+                            this._valueChange("nick",text)
+                        }}  returnKeyType="join">
 
                                 </TextInput>
                                 <Text style={{marginLeft:40,marginRight:40,color:"#aaa",textAlign:"center"}}>然后上传个掉渣天的头像吧</Text>
@@ -58,6 +64,11 @@ var LoginView = React.createClass({
             </View>
         );
     },
+    _valueChange:function(name,value){
+        this.setState({
+            [name]:value
+        })
+    },
     /**
      * 输入email字段的时候判断此email是否是注册过的,没注册的把界面变成注册界面
      * @param email
@@ -72,11 +83,11 @@ var LoginView = React.createClass({
                 .then((responseData) => {
                     if(responseData.success){
                         this.setState({
-                            isLogin:false
+                            isLogin:true
                         })
                     }else{
                         this.setState({
-                            isLogin:true
+                            isLogin:false
                         })
                     }
                 })
@@ -93,8 +104,11 @@ var LoginView = React.createClass({
             })
         })
         return {
-            isLogin:false,
-            head_pic:"http://htmljs.b0.upaiyun.com/uploads/1438098680186-1bb87d41d15fe27b500a4bfcde01bb0e.png"
+            isLogin:true,
+            head_pic:"http://htmljs.b0.upaiyun.com/uploads/1438098680186-1bb87d41d15fe27b500a4bfcde01bb0e.png",
+            email:"",
+            password:"",
+            nick:""
         };
     },
     _back:function(){
@@ -168,7 +182,46 @@ var LoginView = React.createClass({
      * @private
      */
     _submit:function(){
+        console.log(this.state)
+        this.refs.messageTip.show("登录/注册中")
 
+        var postbody = ""
+        for(var i in this.state){
+            postbody+="&"+i+"="+encodeURIComponent(this.state[i]);
+        }
+
+        fetch("http://www.html-js.com/user/login.json",{
+            method: "POST",
+            body: postbody
+        }).then((response) => response.json())
+        .catch((error) => {
+
+        })
+        .then((responseData) => {
+            setTimeout(() =>{
+                this.setState({
+                    isLoading:false
+                })
+
+            },500)
+
+            var data = responseData;
+            console.log(data)
+            if(data&&data.success){
+                this.refs.messageTip.show("登录/注册成功")
+                AsyncStorage.setItem("login_user_pick_image",data.data.filename)
+                //this.props.navigator.pop();
+            }else{
+                AlertIOS.alert(
+                    '哎呀，失败了',
+                    '可能是网络问题额',
+                    [
+                        {text: '好的'},
+                    ]
+                )
+            }
+        })
+        .done();
     },
     /**
      * 获取当前登录用户token,如果没登陆,返回空

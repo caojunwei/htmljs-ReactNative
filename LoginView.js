@@ -24,25 +24,49 @@ var LoginView = React.createClass({
         return (
             <View style={styles.container}>
                 <View style={styles.statusbar}></View>
-                <View style={styles.content}>
+                <View style={[styles.content,{top:this.state.viewOffsetY}]}>
                     <Text style={styles.title}>登录/注册</Text>
                     <View style={styles.form}>
                         <TextInput placeholder="输入注册邮箱" style={styles.input} value={this.state.email} onChangeText={(text) => {
                             this.checkEmail(text);
                             this._valueChange("email",text)
-                        }} autoFocus={true}>
+                        }} autoFocus={true} onFocus={()=>{
+                            this.setState({
+                            viewOffsetY:-50
+                            })
+                        }} onBlur={()=>{
+                            this.setState({
+                            viewOffsetY:0
+                            })
+                        }}  returnKeyType="done">
 
                         </TextInput>
                         <TextInput placeholder="输入密码" password={true} style={styles.input} value={this.state.password}  onChangeText={(text) => {
                             this._valueChange("password",text)
-                        }} returnKeyType="join">
+                        }} returnKeyType="done"  onFocus={()=>{
+                            this.setState({
+                            viewOffsetY:-50
+                            })
+                        }}  onBlur={()=>{
+                            this.setState({
+                            viewOffsetY:0
+                            })
+                        }}>
 
                         </TextInput>
                         {this.state.isLogin?null:
                             <View>
                                 <TextInput placeholder="输入昵称"  style={styles.input} value={this.state.nick}   onChangeText={(text) => {
                             this._valueChange("nick",text)
-                        }}  returnKeyType="join">
+                        }}  returnKeyType="join"  onFocus={()=>{
+                            this.setState({
+                            viewOffsetY:-50
+                            })
+                        }}  onBlur={()=>{
+                            this.setState({
+                            viewOffsetY:0
+                            })
+                        }}  returnKeyType="done">
 
                                 </TextInput>
                                 <Text style={{marginLeft:40,marginRight:40,color:"#aaa",textAlign:"center"}}>然后上传个掉渣天的头像吧</Text>
@@ -108,7 +132,8 @@ var LoginView = React.createClass({
             head_pic:"http://htmljs.b0.upaiyun.com/uploads/1438098680186-1bb87d41d15fe27b500a4bfcde01bb0e.png",
             email:"",
             password:"",
-            nick:""
+            nick:"",
+            viewOffsetY:0
         };
     },
     _back:function(){
@@ -207,10 +232,15 @@ var LoginView = React.createClass({
 
             var data = responseData;
             console.log(data)
-            if(data&&data.success){
-                this.refs.messageTip.show("登录/注册成功")
-                AsyncStorage.setItem("login_user_pick_image",data.data.filename)
-                //this.props.navigator.pop();
+            if(data){
+                if(data.success){
+                    this.refs.messageTip.show("登录/注册成功")
+                    AsyncStorage.setItem("token",data.token)
+                    this.props.navigator.pop();
+                }else{
+                    this.refs.messageTip.show(data.info)
+                }
+
             }else{
                 AlertIOS.alert(
                     '哎呀，失败了',

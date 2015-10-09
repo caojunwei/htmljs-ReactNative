@@ -26,6 +26,15 @@ var ArticleList = React.createClass({
 
         <View style={styles.container}>
             <View style={styles.statusbar}></View>
+            <View style={styles.tags_container}>
+                <ScrollView style={styles.nav_tags} horizontal={true} directionalLockEnabled={true} automaticallyAdjustContentInsets={false}
+                            contentContainerStyle={styles.contentContainer} alwaysBounceHorizontal={true} alwaysBounceVertical={false}
+                            showsHorizontalScrollIndicator={false}>
+                    {this.state.tags.map(function(tag){
+                        return <Text style={styles.nav_tag}>{tag.name}</Text>
+                    })}
+                </ScrollView>
+            </View>
             <RefreshableListView
                 style = {styles.list}
                 loadData={this.reloadArticles}
@@ -77,6 +86,7 @@ var ArticleList = React.createClass({
             dataSource: new ListView.DataSource({
                 rowHasChanged: (row1, row2) => row1.id !== row2.id,
             }),
+            tags:[],
             filter: '',
             queryNumber: 0,
             test:true,
@@ -86,9 +96,9 @@ var ArticleList = React.createClass({
 
     componentDidMount: function() {
         this.queryArticles('');
-        setTimeout(()=>{
-            this.showLogin();
-        },300)
+        //setTimeout(()=>{
+        //    this.showLogin();
+        //},300)
 
     },
     queryArticles: function(){
@@ -109,6 +119,20 @@ var ArticleList = React.createClass({
                 this.setState({
                     dataSource: this.getDataSource()
                 });
+            })
+            .done();
+
+        fetch("http://www.html-js.com/tag.json")
+            .then((response) => response.json())
+            .catch((error) => {
+
+            })
+            .then((responseData) => {
+                console.log(responseData)
+                var arr = responseData.splice(0,10)
+                this.setState({
+                    tags: arr,
+                })
             })
             .done();
     },
@@ -156,6 +180,24 @@ var styles = StyleSheet.create({
     statusbar:{
         backgroundColor:"#46afe4",
         height:20
+    },
+    tags_container:{
+        height:35,
+        borderColor:"#fff",
+        borderBottomColor:"#eee",
+        borderWidth:1,
+    },
+    nav_tags:{
+        margin:0,
+        padding:0,
+    },
+    nav_tag:{
+        paddingLeft:13,
+        paddingRight:13,
+        height:30,
+        color:"#444",
+        fontSize:14,
+        lineHeight:25,
     },
     container: {
         flex: 1,

@@ -26,6 +26,9 @@ var ArticleList = React.createClass({
 
         <View style={styles.container}>
             <View style={styles.statusbar}></View>
+            <View style={styles.topbar}>
+                <Text style={styles.toptitle}>码上读</Text>
+            </View>
             <View style={styles.tags_container}>
                 <ScrollView style={styles.nav_tags} horizontal={true} directionalLockEnabled={true} automaticallyAdjustContentInsets={false}
                             contentContainerStyle={styles.contentContainer} alwaysBounceHorizontal={true} alwaysBounceVertical={false}
@@ -177,6 +180,17 @@ var ArticleList = React.createClass({
 });
 
 var styles = StyleSheet.create({
+    topbar:{
+        backgroundColor:"#46afe4",
+        height:50
+    },
+    toptitle:{
+        fontSize:20,
+        color:"#fff",
+        height:50,
+        top:14,
+        textAlign: 'center',
+    },
     statusbar:{
         backgroundColor:"#46afe4",
         height:20

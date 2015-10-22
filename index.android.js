@@ -17,7 +17,7 @@ var {
 var htmljs = React.createClass({
 
     render:function(){
-        StatusBarIOS.setStyle("light-content", true)
+        StatusBarIOS&&StatusBarIOS.setStyle("light-content", true)
         //TabBarIOS.set
         return (
         <NavigatorIOS

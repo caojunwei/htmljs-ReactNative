@@ -5,7 +5,8 @@
 'use strict';
 
 var React = require('react-native');
-var ArticleList = require("./ArticleList.js")
+var ArticleList = require("./ArticleList.js");
+var TopicList = require("./TopicList.js");
 var Icon = require('react-native-vector-icons/Ionicons');
 
 var {
@@ -30,7 +31,7 @@ var MainTabBar = React.createClass({
                 tintColor="#46afe4"
                 barTintColor="#fff">
                 <Icon.TabBarItem
-                    title="码上读"
+                    title="文章"
                     iconName="android-list"
                     selected={this.state.selectedTab === 'tab1'}
                     onPress={() => {
@@ -44,7 +45,7 @@ var MainTabBar = React.createClass({
 
                 </Icon.TabBarItem>
                 <Icon.TabBarItem
-                    title="华山论剑"
+                    title="聊天"
                     iconName="chatboxes"
                     selected={this.state.selectedTab === 'tab2'}
                     onPress={() => {
@@ -53,7 +54,7 @@ var MainTabBar = React.createClass({
                         });
                       }}>
 
-                    <ArticleList navigator={this.props.navigator}/>
+                    <TopicList navigator={this.props.navigator}/>
 
 
                 </Icon.TabBarItem>

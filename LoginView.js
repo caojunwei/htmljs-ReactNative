@@ -5,7 +5,7 @@
 
 var React = require('react-native');
 var Icon = require('react-native-vector-icons/Ionicons');
-var MessageTip = require("./MessageTip.js")
+var MessageTip = require("./tools/MessageTip.js")
 var UIImagePickerManager = require('NativeModules').UIImagePickerManager;
 var {
     AppRegistry,

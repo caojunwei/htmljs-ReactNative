@@ -4,9 +4,8 @@
  */
 
 var React = require('react-native');
-var ArticleCell = require("./article/ArticleCell.js")
+var TopicListCell = require("./topic/TopicListCell.js")
 var ArticleView = require("./article/ArticleView.js")
-var ArticleTalk = require("./article/ArticleTalk.js")
 var LoginView = require("./LoginView.js")
 var MessageTip = require("./tools/MessageTip.js")
 var RefreshableListView = require('react-native-refreshable-listview')
@@ -20,57 +19,48 @@ var {
     ScrollView
     } = React;
 
-var ArticleList = React.createClass({
+var TopicList = React.createClass({
     render: function() {
         return (
 
-        <View style={styles.container}>
-            <View style={styles.statusbar}></View>
-            <View style={styles.topbar}>
-                <Text style={styles.toptitle}>文章</Text>
-            </View>
-            <View style={styles.tags_container}>
-                <ScrollView style={styles.nav_tags} horizontal={true} directionalLockEnabled={true} automaticallyAdjustContentInsets={false}
-                            contentContainerStyle={styles.contentContainer} alwaysBounceHorizontal={true} alwaysBounceVertical={false}
-                            showsHorizontalScrollIndicator={false}>
-                    {this.state.tags.map(function(tag){
-                        return <Text style={styles.nav_tag}>{tag.name}</Text>
-                    })}
-                </ScrollView>
-            </View>
-            <RefreshableListView
-                style = {styles.list}
-                loadData={this.reloadArticles}
-                refreshDescription="玩命加载中"
-                minDisplayTime={2000}
-                minPulldownDistance={20}
-                ref="listview"
-                renderSeparator={this.renderSeparator}
-                dataSource={this.state.dataSource}
-                renderRow={this.renderRow}
-                onEndReached={this.onEndReached}
-                automaticallyAdjustContentInsets={false}
-                keyboardDismissMode="on-drag"
-                keyboardShouldPersistTaps={true}
-                showsVerticalScrollIndicator={true}
-                onEndReachedThreshold={20}
-                />
-            {this.state.isLoading?<View style={styles.loadingContainer}>
-            <ActivityIndicatorIOS
-                style={styles.centerLoading}
-                size="large"
-                />
+            <View style={styles.container}>
+                <View style={styles.statusbar}></View>
+                <View style={styles.topbar}>
+                    <Text style={styles.toptitle}>聊天</Text>
+                </View>
+
+                <RefreshableListView
+                    style = {styles.list}
+                    loadData={this.reloadTopics}
+                    refreshDescription="玩命加载中"
+                    minDisplayTime={2000}
+                    minPulldownDistance={20}
+                    ref="listview"
+                    renderSeparator={this.renderSeparator}
+                    dataSource={this.state.dataSource}
+                    renderRow={this.renderRow}
+                    onEndReached={this.onEndReached}
+                    automaticallyAdjustContentInsets={false}
+                    keyboardDismissMode="on-drag"
+                    keyboardShouldPersistTaps={true}
+                    showsVerticalScrollIndicator={true}
+                    onEndReachedThreshold={20}
+                    />
+                {this.state.isLoading?<View style={styles.loadingContainer}>
+                    <ActivityIndicatorIOS
+                        style={styles.centerLoading}
+                        size="large"
+                        />
                 </View>:null}
-        </View>
+            </View>
         );
     },
     renderRow: function(
-        article: Object
+        topic: Object
     ) {
         return (
-            <ArticleCell
-                article={article} onSelect={() => this.selectArticle(article)}
-                showCommit={() => this.showCommit(article)}
+            <TopicListCell
+                topic={topic} onSelect={() => this.selectTopic(topic)}
                 />
         );
     },
@@ -93,31 +83,31 @@ var ArticleList = React.createClass({
             filter: '',
             queryNumber: 0,
             test:true,
-            articles:[]
+            topics:[]
         };
     },
 
     componentDidMount: function() {
-        this.queryArticles('');
+        this.queryTopics('');
         //setTimeout(()=>{
         //    this.showLogin();
         //},300)
 
     },
-    queryArticles: function(){
+    queryTopics: function(){
         this.setState({
             isLoading: true,
         });
-        fetch("http://www.html-js.com/article.json?page="+this.state.nowPage)
+        fetch("http://www.html-js.com/topic.json?page="+this.state.nowPage)
             .then((response) => response.json())
             .catch((error) => {
 
             })
             .then((responseData) => {
-                var articles = this.state.articles.concat(responseData.data.articles)
+                var topics = this.state.topics.concat(responseData)
                 this.setState({
                     isLoading: false,
-                    articles:articles
+                    topics:topics
                 })
                 this.setState({
                     dataSource: this.getDataSource()
@@ -125,27 +115,27 @@ var ArticleList = React.createClass({
             })
             .done();
 
-        fetch("http://www.html-js.com/tag.json")
-            .then((response) => response.json())
-            .catch((error) => {
-
-            })
-            .then((responseData) => {
-                console.log(responseData)
-                var arr = responseData.splice(0,10)
-                this.setState({
-                    tags: arr,
-                })
-            })
-            .done();
+        //fetch("http://www.html-js.com/tag.json")
+        //    .then((response) => response.json())
+        //    .catch((error) => {
+        //
+        //    })
+        //    .then((responseData) => {
+        //        console.log(responseData)
+        //        var arr = responseData.splice(0,10)
+        //        this.setState({
+        //            tags: arr,
+        //        })
+        //    })
+        //    .done();
     },
     getDataSource: function(): ListView.DataSource {
-        return this.state.dataSource.cloneWithRows(this.state.articles);
+        return this.state.dataSource.cloneWithRows(this.state.topics);
     },
-    reloadArticles:function(){
+    reloadTopics:function(){
         console.log("reloadArticles")
         this.state.nowPage = 1;
-        this.queryArticles()
+        this.queryTopics()
     },
     onEndReached:function(){
         console.log("---------------end----------------")
@@ -156,21 +146,16 @@ var ArticleList = React.createClass({
             console.log(this.state.nowPage)
             this.state.nowPage++;
             console.log(this.state.nowPage)
-            this.queryArticles()
+            this.queryTopics()
         }
     },
-    selectArticle:function(article){
+    selectTopic:function(topic){
         this.props.navigator.push({
-          component: ArticleView,
-          passProps: {article},
+            component: ArticleView,
+            passProps: {topic},
         });
     },
-    showCommit:function(article){
-        this.props.navigator.push({
-            component: ArticleTalk,
-            passProps: {article},
-        })
-    },
+
     showLogin:function(){
         this.props.navigator.push({
             component: LoginView,
@@ -257,6 +242,6 @@ var styles = StyleSheet.create({
     }
 });
 
-AppRegistry.registerComponent('ArticleList', () => ArticleList);
+AppRegistry.registerComponent('TopicList', () => TopicList);
 
-module.exports = ArticleList;
+module.exports = TopicList;
